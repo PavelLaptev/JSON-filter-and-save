@@ -1,0 +1,34 @@
+{
+    "name": "terminal-nodejs-filter-json",
+    "version": "0.1.4",
+    "description": "Filter JSON and save it to a separate file.",
+    "scripts": {
+        "start": "node default-parser.js",
+        "ff-parse": "node ff-parser.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/PavelLaptev/terminal-nodejs-json-filter.git"
+    },
+    "keywords": [
+        "JSON",
+        "filter",
+        "nodeJS",
+        "terminal"
+    ],
+    "author": "Pavel Laptev <laptev.graphics@gmail.com> (https://pavellaptev.github.io)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/PavelLaptev/terminal-nodejs-json-filter/issues"
+    },
+    "homepage": "https://github.com/PavelLaptev/terminal-nodejs-json-filter#readme",
+    "engines": {
+        "node": "^10.0.0"
+    },
+    "devDependencies": {},
+    "dependencies": {
+        "cli-color": "^1.3.0",
+        "fs-extra": "^7.0.0"
+    }
+}
