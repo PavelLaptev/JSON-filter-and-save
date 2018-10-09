@@ -12,7 +12,7 @@ Clone the repasitory
 
 `git clone https://github.com/PavelLaptev/terminal-nodejs-json-filter.git`
 
-This script could be run only from the folder where the project is store. Use Terminal window in VS code or use ususal MacOS terminal.
+This script could be run only from the folder where the project is store. Use Terminal window in VS code or use usual MacOS terminal.
 
 ![preview](preview.jpg)
 
