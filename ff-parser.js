@@ -20,7 +20,7 @@ const writeFile = (path, content) => {
         clc
             .xterm(250)
             .bold(
-                "\n👶  Do you want to change the file name?Hit 'Enter' key to skip the step, or type a new name: "
+                "\n👶  Do you want to change the file name? Hit 'Enter' key to skip the step, or type a new name: "
             ),
         answerName => {
             if (answerName === "") {

@@ -18,7 +18,7 @@ console.log(clc.xterm(132).bold(helloMsg));
 writeFile = (path, content) => {
     rl.question(
         clc.xterm(250)(
-            "\nDo you want to change the file name?\nHit 'Enter' key to skip the step, or type a new name: "
+            "\nDo you want to change the file name? Hit 'Enter' key to skip the step, or type a new name: "
         ),
         answerName => {
             if (answerName === "") {
