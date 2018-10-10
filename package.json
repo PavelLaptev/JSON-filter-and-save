@@ -3,8 +3,8 @@
     "version": "0.2.0",
     "description": "Filter JSON and save it to a separate file.",
     "scripts": {
-        "start": "node default-parser.js",
-        "ff-parse": "node ff-parser.js",
+        "start": "node ff-parser.js",
+        "default-parse": "node default-parser.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
