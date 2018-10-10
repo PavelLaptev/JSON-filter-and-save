@@ -18,7 +18,7 @@ console.log(clc.bold(helloMsg));
 writeFile = (path, content) => {
     rl.question(
         clc.xterm(250)(
-            "\nDo you want to change the file name? Hit 'Enter' key to skip the step, or type a new name: "
+            "\n👶  Do you want to change the file name? Hit 'Enter' key to skip the step, or type a new name: "
         ),
         answerName => {
             if (answerName === "") {
@@ -47,7 +47,7 @@ writeFile = (path, content) => {
 };
 
 rl.question(
-    clc.xterm(244).bold("Pleas enter a path to the file: "),
+    clc.xterm(244).bold("📁  Pleas enter a path to the file: "),
     answerPath => {
         fs.readFile(answerPath, "utf8", function(err, data) {
             if (err) {
@@ -71,7 +71,7 @@ rl.question(
             rl.question(
                 clc
                     .xterm(244)
-                    .bold("\nAdd keys separating words with commas: "),
+                    .bold("\n⚙️  Add keys separating words with commas: "),
                 answerParam => {
                     // Create filtered JSON
                     const filtered = data.map((item, i) => {
@@ -85,30 +85,49 @@ rl.question(
                     });
 
                     rl.question(
-                        clc.xterm(250)(
-                            `\nYour file will be saved into ${clc.xterm(222)(
-                                process.cwd()
-                            )}. Do you want to change the path? y or n: `
-                        ),
-                        answerOutput => {
-                            // Write to file
-                            if (answerOutput === "n" || answerOutput === "") {
-                                writeFile("", filtered);
-                            } else {
-                                rl.question(
-                                    clc
-                                        .xterm(244)
-                                        .bold(
-                                            `\nEnter a new path to save your awesome JSON: `
-                                        ),
-                                    answerPathToFile => {
-                                        writeFile(
-                                            `${answerPathToFile}/`,
-                                            filtered
+                        clc
+                            .xterm(244)
+                            .bold(
+                                "\n👨‍👩‍👧‍👦  What length of the output JSON do you need? Press 'Enter' to skip or type the number: "
+                            ),
+                        answerLength => {
+                            newLength = Number(answerLength);
+                            if (filtered.length >= newLength) {
+                                filtered.length = answerLength;
+                            }
+
+                            rl.question(
+                                clc.xterm(250)(
+                                    `\n💾  Your file will be saved into ${clc.xterm(
+                                        222
+                                    )(
+                                        process.cwd()
+                                    )}. Do you want to change the path? y or n ('Enter' key to skip): `
+                                ),
+                                answerOutput => {
+                                    // Write to file
+                                    if (
+                                        answerOutput === "n" ||
+                                        answerOutput === ""
+                                    ) {
+                                        writeFile("", filtered);
+                                    } else {
+                                        rl.question(
+                                            clc
+                                                .xterm(244)
+                                                .bold(
+                                                    `\nEnter a new path to save your awesome JSON: `
+                                                ),
+                                            answerPathToFile => {
+                                                writeFile(
+                                                    `${answerPathToFile}/`,
+                                                    filtered
+                                                );
+                                            }
                                         );
                                     }
-                                );
-                            }
+                                }
+                            );
                         }
                     );
                 }

@@ -162,13 +162,40 @@ rl.question(
                                     "\n🖼  Add image sizes separating numbers with commas: "
                                 ),
                             answerSizes => {
-                                filterImageSizes(filtered, answerSizes);
+                                rl.question(
+                                    clc
+                                        .xterm(244)
+                                        .bold(
+                                            "\n👨‍👩‍👧‍👦  What length of the output JSON do you need? Press 'Enter' to skip or type the number: "
+                                        ),
+                                    answerLength => {
+                                        newLength = Number(answerLength);
+                                        if (filtered.length >= newLength) {
+                                            filtered.length = answerLength;
+                                        }
 
-                                pathThenNameThenSave(filtered);
+                                        filterImageSizes(filtered, answerSizes);
+
+                                        pathThenNameThenSave(filtered);
+                                    }
+                                );
                             }
                         );
                     } else {
-                        pathThenNameThenSave(filtered);
+                        rl.question(
+                            clc
+                                .xterm(244)
+                                .bold(
+                                    "\n👨‍👩‍👧‍👦 What length of the output JSON do you need? Press 'Enter' to skip or type the number: "
+                                ),
+                            answerLength => {
+                                newLength = Number(answerLength);
+                                if (filtered.length >= newLength) {
+                                    filtered.length = answerLength;
+                                }
+                                pathThenNameThenSave(filtered);
+                            }
+                        );
                     }
                 }
             );
