@@ -5,6 +5,7 @@
     "scripts": {
         "start": "node ff-parser.js",
         "default-parse": "node default-parser.js",
+        "icons": "node icons.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
